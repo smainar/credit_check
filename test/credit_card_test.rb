@@ -1,9 +1,9 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require '.lib/credit_card'
+require './lib/credit_card'
 require 'pry'
 
-class CreditClass
+class CreditCardClass
   def setup
     @credit_card = CreditCard.new("5541808923795240", 15000)
   end
@@ -27,5 +27,5 @@ class CreditClass
   def test_it_is_valid
     assert_equal true, @credit_card.is_valid?
   end
-  
+
 end
