@@ -41,4 +41,8 @@ class CreditCheck
     double_digits_are_summed.sum
   end
 
+  def divisible_by_10?
+    results_summed % 10 == 0
+  end
+
 end
