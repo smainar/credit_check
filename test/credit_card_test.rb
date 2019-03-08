@@ -6,6 +6,7 @@ require 'pry'
 class CreditCardClass < Minitest::Test
   def setup
     @credit_card = CreditCard.new("5541808923795240", 15000)
+    @invalid_credit_card = CreditCard.new("6011797668868728", 15000)
   end
 
   def test_it_exists
@@ -24,8 +25,12 @@ class CreditCardClass < Minitest::Test
     assert_equal "5240", @credit_card.last_four
   end
 
-  def test_it_is_valid
+  def test_it_wiLl_return_true_if_valid
     assert_equal true, @credit_card.is_valid?
+  end
+
+  def test_it_will_return_false_if_invalid
+    assert_equal false, @invalid_credit_card.is_valid?
   end
 
 end
