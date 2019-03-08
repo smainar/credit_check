@@ -12,5 +12,4 @@ class CreditCard
   def last_four
     @card_number[-4..-1]
   end
-
 end
