@@ -37,4 +37,8 @@ class CreditCheck
     return doubled_digits_summed_array
   end
 
+  def results_summed
+    double_digits_are_summed.sum
+  end
+
 end
