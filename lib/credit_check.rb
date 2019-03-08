@@ -13,4 +13,16 @@ class CreditCheck
     end
   end
 
+  def every_other_digit_is_doubled
+    doubled_digits_array = []
+    single_digits.each_with_index do |digit, index|
+      if index.even?
+        doubled_digits_array << digit * 2
+      else
+        doubled_digits_array << digit
+      end
+    end
+    return doubled_digits_array
+  end
+  
 end
