@@ -22,12 +22,14 @@ class CreditCheckTest < Minitest::Test
 
   def test_it_can_double_the_value_of_every_other_digit
     @credit_check.single_digits
+
     assert_equal [10, 5, 8, 1, 16, 0, 16, 9, 4, 3, 14, 9, 10, 2, 8, 0], @credit_check.every_other_digit_is_doubled
   end
 
   def test_it_can_sum_digits_greater_than_9
     @credit_check.single_digits
     @credit_check.every_other_digit_is_doubled
+
     assert_equal [1, 5, 8, 1, 7, 0, 7, 9, 4, 3, 5, 9, 1, 2, 8, 0], @credit_check.double_digits_are_summed
   end
 
@@ -35,6 +37,7 @@ class CreditCheckTest < Minitest::Test
     @credit_check.single_digits
     @credit_check.every_other_digit_is_doubled
     @credit_check.double_digits_are_summed
+
     assert_equal 70, @credit_check.results_summed
   end
 
@@ -43,6 +46,7 @@ class CreditCheckTest < Minitest::Test
     @credit_check.every_other_digit_is_doubled
     @credit_check.double_digits_are_summed
     @credit_check.results_summed
+
     assert_equal true, @credit_check.divisible_by_10?
   end
 
@@ -52,6 +56,7 @@ class CreditCheckTest < Minitest::Test
     @credit_check.double_digits_are_summed
     @credit_check.results_summed
     @credit_check.divisible_by_10?
+
     assert_equal "The number 5541808923795240 is valid!", @credit_check.check_validation
 
     credit_check = CreditCheck.new("6011797668868728")
@@ -60,6 +65,7 @@ class CreditCheckTest < Minitest::Test
     credit_check.double_digits_are_summed
     credit_check.results_summed
     credit_check.divisible_by_10?
+    
     assert_equal "The number 6011797668868728 is invalid!", credit_check.check_validation
   end
 
