@@ -1,12 +1,12 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/credit_card'
+require './lib/credit_check'
 require 'pry'
 
 class CreditCardClass < Minitest::Test
   def setup
     @credit_card = CreditCard.new("5541808923795240", 15000)
-    @invalid_credit_card = CreditCard.new("6011797668868728", 15000)
   end
 
   def test_it_exists
@@ -30,7 +30,9 @@ class CreditCardClass < Minitest::Test
   end
 
   def test_it_will_return_false_if_invalid
-    assert_equal false, @invalid_credit_card.is_valid?
+    invalid_credit_card = CreditCard.new("6011797668868728", 15000)
+
+    assert_equal false, invalid_credit_card.is_valid?
   end
 
 end
