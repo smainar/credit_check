@@ -46,4 +46,16 @@ class CreditCheckTest < Minitest::Test
     assert_equal true, @credit_check.divisible_by_10?
   end
 
+  def test_it_can_check_validation_and_return_output
+    @credit_check.single_digits
+    @credit_check.every_other_digit_is_doubled
+    @credit_check.double_digits_are_summed
+    @credit_check.results_summed
+    @credit_check.divisible_by_10?
+    assert_equal "The number 5541808923795240 is valid!", @credit_check.check_validation
+
+    credit_check = CreditCheck.new("6011797668868728")
+    assert_equal "The number 6011797668868728 is invalid!", credit_check.check_validation
+  end
+
 end
