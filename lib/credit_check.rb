@@ -45,4 +45,12 @@ class CreditCheck
     results_summed % 10 == 0
   end
 
+  def check_validation
+    if divisible_by_10? == true
+      return "The number #{@card_number} is valid!"
+    else
+      return "The number #{@card_number} is invalid!"
+    end
+  end
+
 end
