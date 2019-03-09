@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/bank'
 require './lib/credit_card'
+require './lib/credit_check'
 
 class BankTest < Minitest::Test
   def test_it_exists
