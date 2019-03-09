@@ -12,4 +12,14 @@ class CreditCard
   def last_four
     @card_number[-4..-1]
   end
+
+  def is_valid?
+    credit_check = CreditCheck.new(card_number)
+    if credit_check.divisible_by_10? == true
+      return true
+    else
+      return false
+    end
+  end
+
 end
